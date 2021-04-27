@@ -1,0 +1,27 @@
+<head>
+    <script>
+
+        // general rules for localstorage
+        // localStorage.setItem('<item name>', '<item content>')
+
+            function action() {
+                window.localStorage['header'] = document.getElementById('header').value;
+            }
+
+            function action2() {
+                document.getElementById('header').value = window.localStorage['header'];
+            }
+
+    </script>
+</head>
+<body>
+    
+    <section id="sectioncomment">
+        <form action="/form/submit" method="POST" >
+            <textarea class="comentario" placeholder="Escreva a sua menssagem aqui: "></textarea>
+            <br>
+            <input type="submit" name="submit" value="Enviar" id="BE">
+          </form>
+    </section>
+
+</body>

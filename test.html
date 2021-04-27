@@ -1,0 +1,42 @@
+<head>
+    <style>
+
+    </style>
+    <script>
+
+        function test() {
+            if (localStorage.getItem('input') !== null) {
+                console.log(`key there`);
+            } else {
+                console.log(`not there`);
+            }
+        }
+
+        function postComment() {
+            const value = localStorage.getItem('input');
+            document.getElementById('msgHolder').textContent = `${value}`;
+        }        
+
+        function saveComment() {
+            const element = document.getElementById('input')
+            localStorage.setItem('input', element.value)
+
+            postComment();
+        }
+
+    </script>
+</head>
+<body>
+
+    <section>
+        <div style="border: solid 1.8px black;width: 550px;height: 150px;">
+            <p style="border: solid 1px black;width: auto;height: auto;" id="msgHolder">Text</p>
+        </div>
+        <div>
+            <input type="text" id="input" placeholder="Enter Content">
+            <p><button onclick="saveComment()" type="button">Save me!</button></p>
+            <p><button onclick="test()" type="button">t</button></p>
+        </div>
+    </section>
+
+</body>

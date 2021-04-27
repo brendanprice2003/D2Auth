@@ -1,0 +1,27 @@
+<head>
+    <title>auth</title>
+    <style>
+        html {
+            background-color: rgb(46, 38, 46);
+        }
+    </style>
+    <script defer>
+        window.alert("hello")
+        // Recieve JSON data from server
+        async function getUser() {
+            const res = await fetch('/auth');
+            return res.json();
+        }
+
+        (async () => {
+            const user = await getUser();
+            console.log(user);
+            localStorage.setItem('<name of variable>', '<content>');
+        })();
+    </script>
+</head>
+
+<body>
+    2.) auth.html <br>
+    <a href='/logout'>log out</a>
+</body>
